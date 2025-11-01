@@ -228,4 +228,117 @@
     Por lo tanto, la suma de dos curvaturas normales en un punto en direcciones ortogonales es constantemente igual a \( 2H \).
 \end{proof}
 
+\vspace{1em}
+
+\begin{theorem}{9}
+    Probar que una curva conexa regular \( \gamma(t) = \varphi(u(t), v(t)) \) en un entorno coordenado
+    \( \varphi(U) \) de una superficie regular \( S \) es una línea de curvatura si y sólo si satisface la siguiente ecuación diferencial: \begin{align*}
+        (fE - eF) {(u')}^2 + (gE - eG) u'v'+ (gF - fG){(v')}^2 = 0.
+    \end{align*}
+\end{theorem}
+
+\begin{proof}
+    Sea \( S \) la superficie parametrizada por \( \varphi(u, v) \) si tomamos la curva \( \gamma(t) = \varphi(u(t), v(t)) \) y suponemos que es línea de curvatura,
+    por \textbf{Proposición 4.6.2 (Olinde Rodrigues)} se tiene que \begin{align*}
+        N'(s) & = \lambda(s) \gamma'(s) \\
+    \end{align*}
+    Con \( -\lambda(s) \) la curvatura principal en la dirección de \( \gamma'(s) \). Luego, \begin{align*}
+        N'(s) & = N_u u' + N_v v'                                                                                                                                                          \\
+              & = \frac{fF - eG}{EG - F^2} \varphi_u u' + \frac{gF - fG}{EG - F^2} \varphi_v v' + \frac{eF - fE}{EG - F^2} (\varphi_u v' + \varphi_v u')                                   \\
+              & = \left( \frac{fF - eG}{EG - F^2} u' + \frac{eF - fE}{EG - F^2} v' \right) \varphi_u + \left( \frac{gF - fG}{EG - F^2} v' + \frac{eF - fE}{EG - F^2} u' \right) \varphi_v.
+    \end{align*}
+    Además, \( \gamma'(s) = \varphi_u u' + \varphi_v v'. \)
+    Uniendo las dos ecuaciones \begin{align*}
+        N'(s)                                                                                                                                                                   & = \lambda(s) \gamma'(s)                                                            \\
+                                                                                                                                                                                & = \lambda(s) (\varphi_u u' + \varphi_v v')                                         \\
+                                                                                                                                                                                & = \left( \lambda(s) u' \right) \varphi_u + \left( \lambda(s) v' \right) \varphi_v. \\
+        \left( \frac{fF - eG}{EG - F^2} u' + \frac{eF - fE}{EG - F^2} v' \right) \varphi_u + \left( \frac{gF - fG}{EG - F^2} v' + \frac{eF - fE}{EG - F^2} u' \right) \varphi_v & = \left( \lambda(s) u' \right) \varphi_u + \left( \lambda(s) v' \right) \varphi_v.
+    \end{align*}
+    Obteniendo el siguiente sistema de ecuaciones: \begin{align*}
+        \frac{fF - eG}{EG - F^2} u' + \frac{eF - fE}{EG - F^2} v' & = \lambda(s) u', \\
+        \frac{gF - fG}{EG - F^2} v' + \frac{eF - fE}{EG - F^2} u' & = \lambda(s) v'.
+    \end{align*}
+    Despejando \( \lambda \) de ambas ecuaciones se obtiene: \begin{align*}
+        \left [ \frac{fF - eG}{EG - F^2} u' + \frac{eF - fE}{EG - F^2} v' \right] \cdot 1/u'          & = \lambda(s)                                                                           \\
+        \left [ \frac{gF - fG}{EG - F^2} v' + \frac{eF - fE}{EG - F^2} u' \right] \cdot 1/v'          & = \lambda(s)                                                                           \\
+        \implies \left [ \frac{fF - eG}{EG - F^2} u' + \frac{eF - fE}{EG - F^2} v' \right] \cdot 1/u' & = \left [ \frac{gF - fG}{EG - F^2} v' + \frac{eF - fE}{EG - F^2} u' \right] \cdot 1/v'
+    \end{align*}
+    Multiplicando por \( u'v'(EG - F^2) \) se obtiene: \begin{align*}
+        (fF - eG) {(u')}^2 + (eF - fE) u'v'                               & = (gF - fG) {(v')}^2 + (eF - fE) u'v' \\
+        \implies (fE - eF) {(u')}^2 + (gE - eG) u'v' + (gF - fG) {(v')}^2 & = 0.
+    \end{align*}
+    Que es lo que queríamos demostrar. La implicación recíproca se demuestra de forma análoga.
+\end{proof}
+
+\vspace{1em}
+
+\begin{theorem}{10}
+    Mostrar que ningún entorno de un punto de una esfera puede ser mapeado isométricamente a un plano.
+\end{theorem}
+
+\begin{proof}
+    El ejercicio es trivial si utilizamos el teorema de Egregium de Gauss que nos dice que la curvatura de Gauss es invariante por isometrías. Como la curvatura de la esfera es \( K > 0 \) y la del plano es \( K \equiv 0 \) se tiene que no puede existir una isometría.
+\end{proof}
+
+\vspace{1em}
+
+\begin{theorem}{11}
+    Probar que no existe ninguna superficie regular que admita una parametrización local cuyos coeficientes de la primera y segunda forma sean \begin{align*}
+        E = G = 1, \qquad F = 0, \qquad e = 0, \qquad f = g = 1
+    \end{align*}
+\end{theorem}
+
+\begin{proof}
+    Supongamos que existe una superficie \( S \) regular con una parametrización local \( \varphi : U \to S \) tal que \begin{align*}
+        E = G = 1, \qquad F = 0, \qquad e = 0, \qquad f = g = 1
+    \end{align*}
+    Luego, por el \textbf{Teorema de Gauss} se tiene que \begin{align*}
+        K & = \frac{eg - f^2}{EG - F^2} = \frac{0 \cdot 1 - 1^2}{1 \cdot 1 - 0^2} = -1.
+    \end{align*}
+    Por otro lado, como \( F \equiv 0 \) se tiene que, por \textbf{Proposición 4.9.7}, la curvatura de Gauss \( K \) puede ser expresada en función de los coeficientes de la primera forma fundamental y sus derivadas parciales como \begin{align*}
+        K & = -\frac{1}{2 \sqrt{EG - F^2}} \left( {\left( \frac{E_v - F_u}{\sqrt{EG - F^2}} \right)}_v + {\left( \frac{G_u - F_v}{\sqrt{EG - F^2}} \right)}_u \right).
+    \end{align*}
+    Por lo que, sustituyendo los valores de los coeficientes de la primera forma fundamental se obtiene: \begin{align*}
+        K & = -\frac{1}{2} \left( 0_v + 0_u \right) = 0.
+    \end{align*}
+    Llegando a una contradicción pues \( K \) no puede ser \( -1 \) y \( 0 \) a la vez. Por lo tanto, no existe ninguna superficie regular que admita una parametrización local cuyos coeficientes de la primera y segunda forma sean los dados.
+\end{proof}
+
+\vspace{1em}
+
+\begin{theorem}{12}
+    Si S está parametrizada localmente por \( \varphi : U \to S \), entonces \( \varphi \) es una
+    aplicación conforme si y solo si \( E = G \) y \( F = 0 \).
+\end{theorem}
+
+\begin{proof}
+    Supongamos que es una aplicación conforme. Entonces, por definición, tenemos que \begin{align*}
+        E = \langle \varphi_u, \varphi_u \rangle, \qquad
+        F = \langle \varphi_u, \varphi_v \rangle, \qquad
+        G = \langle \varphi_v, \varphi_v \rangle.
+    \end{align*}
+    Como \( \varphi \) es conforme, se tiene que para todo \( w_1, w_2 \in T_p S \) \begin{align*}
+        \langle d\varphi_p(w_1), d\varphi_p(w_2) \rangle & = \lambda(p) \langle w_1, w_2 \rangle.
+    \end{align*}
+    Con \( \lambda(p) > 0 \). Consideremos la base canónica dada por \( \{ e_1, e_2 \} \) en \( T_{(u, v)} S\) tal que
+    \( d \varphi_p : T_{(u, v)} U \to T_{p} S \), luego \begin{align*}
+        \langle d\varphi_p(e_1), d\varphi_p(e_1) \rangle & = \lambda(p) \langle e_1, e_1 \rangle \implies E = \lambda(p), \\
+        \langle d\varphi_p(e_2), d\varphi_p(e_2) \rangle & = \lambda(p) \langle e_2, e_2 \rangle \implies G = \lambda(p), \\
+        \langle d\varphi_p(e_1), d\varphi_p(e_2) \rangle & = \lambda(p) \langle e_1, e_2 \rangle \implies F = 0.
+    \end{align*}
+    pues \( \varphi_u = d\varphi_p(e_1) \) y \( \varphi_v = d\varphi_p(e_2) \). Por lo tanto, \( E = G \) y \( F = 0 \).
+    Recíprocamente, dados \( x = (v_1, v_2) \), \( y = (w_1, w_2) \in T_{(u, v)} U \) se tiene que \begin{align*}
+        d\varphi_p(x) & = v_1 \varphi_u + v_2 \varphi_v, \\
+        d\varphi_p(y) & = w_1 \varphi_u + w_2 \varphi_v.
+    \end{align*}
+    Por lo que \begin{align*}
+        \langle d\varphi_p(x), d\varphi_p(y) \rangle & = \langle v_1 \varphi_u + v_2 \varphi_v, w_1 \varphi_u + w_2 \varphi_v \rangle                                                                                                              \\
+                                                     & = v_1 w_1 \langle \varphi_u, \varphi_u \rangle + v_1 w_2 \langle \varphi_u, \varphi_v \rangle + v_2 w_1 \langle \varphi_v, \varphi_u \rangle + v_2 w_2 \langle \varphi_v, \varphi_v \rangle \\
+                                                     & = v_1 w_1 E + v_1 w_2 F + v_2 w_1 F + v_2 w_2 G                                                                                                                                             \\
+                                                     & = E (v_1 w_1 + v_2 w_2)                                                                                                                                                                     \\
+                                                     & = E \langle x, y \rangle.
+    \end{align*}
+    Por lo tanto, \( \varphi \) es conforme con \( \lambda(p) = E = \langle \varphi_u, \varphi_u \rangle > 0 \) si \( \varphi \) es regular.
+\end{proof}
+
 \end{document}
